@@ -8,6 +8,8 @@ packages = [{include = "tiny_etl"}]
 
 [tool.poetry.dependencies]
 python = "3.8.16"
+python-dotenv = "^1.0.0"
+pandas = "^1.5.3"
 
 
 [build-system]

@@ -1,21 +1,24 @@
+import os
+import bigquery
 
 
 
+class Load:
 
-# Define BigQuery connection parameters
-bq_project = 'your_bq_project_name'
-bq_dataset = 'your_bq_dataset_name'
-bq_table_name = 'processed_data'
-bq_credentials_file_path = 'path/to/your/credentials.json'
+    def __init__(self, transformed_data):
+        self.transformed_data = transformed_data
+        self.bq_project = os.environ.get('BQ_PROJECT')
+        self.bq_dataset = os.environ.get('BQ_DATASET')
+        self.bq_table_name = os.environ.get('BQ_TABLE')
+        self.bq_credentials_file_path = os.environ.get('BQ_CREDENTIALS')
 
-# Connect to BigQuery and push merged data to table
-bq_client = bigquery.Client.from_service_account_json(bq_credentials_file_path)
-bq_table_ref = bq_client.dataset(bq_dataset).table(bq_table_name)
 
-job_config = bigquery.LoadJobConfig()
-job_config.write_disposition = bigquery.WriteDisposition.WRITE_TRUNCATE
+    def loader(self):
+        bq_client = bigquery.Client.from_service_account_json(self.bq_credentials_file_path)
+        bq_table_ref = bq_client.dataset(self.bq_dataset).table(bq_table_name)
 
-job = bq_client.load_table_from_dataframe(merged_df, bq_table_ref, job_config=job_config)
-job.result()
+        job_config = bigquery.LoadJobConfig()
+        job_config.write_disposition = bigquery.WriteDisposition.WRITE_TRUNCATE
 
-print('ETL pipeline complete!')
+        job = bq_client.load_table_from_dataframe(self.transformed_data, bq_table_ref, job_config=job_config)
+        job.result()
