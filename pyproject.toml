@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "tiny-etl"
+version = "0.1.0"
+description = ""
+authors = ["olahsymbo <olahsymbo@gmail.com>"]
+readme = "README.md"
+packages = [{include = "tiny_etl"}]
+
+[tool.poetry.dependencies]
+python = "3.8.16"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
