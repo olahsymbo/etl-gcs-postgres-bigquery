@@ -38,7 +38,7 @@ jobs:
           poetry config virtualenvs.path ~/.virtualenvs
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --no-root
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Run tests (Pytest)
