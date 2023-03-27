@@ -1,4 +1,4 @@
-name: TinkerBot
+name: ETL-Pipeline
 
 on:
   push:
