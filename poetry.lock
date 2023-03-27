@@ -216,6 +216,42 @@ reauth = ["pyu2f (>=0.1.5)"]
 requests = ["requests (>=2.20.0,<3.0.0dev)"]
 
 [[package]]
+name = "google-cloud-bigquery"
+version = "3.7.0"
+description = "Google BigQuery API client library"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "google-cloud-bigquery-3.7.0.tar.gz", hash = "sha256:cf9f543fad3aaf4871c53f56b718e1ef94a9a778b17f16890015f6fc25c328ec"},
+    {file = "google_cloud_bigquery-3.7.0-py2.py3-none-any.whl", hash = "sha256:d273e6a4fddd24317055c4f7a727b78edb165e714e646d8276df0761fa7023d0"},
+]
+
+[package.dependencies]
+google-api-core = {version = ">=1.31.5,<2.0.0 || >2.3.0,<3.0.0dev", extras = ["grpc"]}
+google-cloud-core = ">=1.6.0,<3.0.0dev"
+google-resumable-media = ">=0.6.0,<3.0dev"
+grpcio = [
+    {version = ">=1.47.0,<2.0dev", markers = "python_version < \"3.11\""},
+    {version = ">=1.49.1,<2.0dev", markers = "python_version >= \"3.11\""},
+]
+packaging = ">=20.0.0"
+proto-plus = ">=1.15.0,<2.0.0dev"
+protobuf = ">=3.19.5,<3.20.0 || >3.20.0,<3.20.1 || >3.20.1,<4.21.0 || >4.21.0,<4.21.1 || >4.21.1,<4.21.2 || >4.21.2,<4.21.3 || >4.21.3,<4.21.4 || >4.21.4,<4.21.5 || >4.21.5,<5.0.0dev"
+python-dateutil = ">=2.7.2,<3.0dev"
+requests = ">=2.21.0,<3.0.0dev"
+
+[package.extras]
+all = ["Shapely (>=1.8.4,<2.0dev)", "db-dtypes (>=0.3.0,<2.0.0dev)", "geopandas (>=0.9.0,<1.0dev)", "google-cloud-bigquery-storage (>=2.0.0,<3.0.0dev)", "grpcio (>=1.47.0,<2.0dev)", "grpcio (>=1.49.1,<2.0dev)", "ipython (>=7.0.1,!=8.1.0)", "ipywidgets (>=7.7.0,<8.0.1)", "opentelemetry-api (>=1.1.0)", "opentelemetry-instrumentation (>=0.20b0)", "opentelemetry-sdk (>=1.1.0)", "pandas (>=1.1.0)", "pyarrow (>=3.0.0)", "tqdm (>=4.7.4,<5.0.0dev)"]
+bqstorage = ["google-cloud-bigquery-storage (>=2.0.0,<3.0.0dev)", "grpcio (>=1.47.0,<2.0dev)", "grpcio (>=1.49.1,<2.0dev)", "pyarrow (>=3.0.0)"]
+geopandas = ["Shapely (>=1.8.4,<2.0dev)", "geopandas (>=0.9.0,<1.0dev)"]
+ipython = ["ipython (>=7.0.1,!=8.1.0)"]
+ipywidgets = ["ipywidgets (>=7.7.0,<8.0.1)"]
+opentelemetry = ["opentelemetry-api (>=1.1.0)", "opentelemetry-instrumentation (>=0.20b0)", "opentelemetry-sdk (>=1.1.0)"]
+pandas = ["db-dtypes (>=0.3.0,<2.0.0dev)", "pandas (>=1.1.0)", "pyarrow (>=3.0.0)"]
+tqdm = ["tqdm (>=4.7.4,<5.0.0dev)"]
+
+[[package]]
 name = "google-cloud-core"
 version = "2.3.2"
 description = "Google Cloud API client core library"
@@ -630,6 +666,18 @@ files = [
 ]
 
 [[package]]
+name = "packaging"
+version = "23.0"
+description = "Core utilities for Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "packaging-23.0-py3-none-any.whl", hash = "sha256:714ac14496c3e68c99c29b00845f7a2b85f3bb6f1078fd9f72fd20f0570002b2"},
+    {file = "packaging-23.0.tar.gz", hash = "sha256:b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"},
+]
+
+[[package]]
 name = "pandas"
 version = "1.5.3"
 description = "Powerful data structures for data analysis, time series, and statistics"
@@ -972,4 +1020,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "30fa544e5ae313c49afb4c10fd52f9adbe29250f9cb0ec3c856e3c960cb965e8"
+content-hash = "7508a12aea1aee441fdfae0f426c9d107173c71608bd4e3c5df6481388a41f38"
