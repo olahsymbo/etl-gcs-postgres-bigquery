@@ -2,8 +2,8 @@ import pandas as pd
 
 
 class Transform:
-
     MERGE_KEY = 'customer_id'
+
     def __init__(self, **kwargs):
         self.df1 = kwargs.get('df1')
         self.df2 = kwargs.get('df2')

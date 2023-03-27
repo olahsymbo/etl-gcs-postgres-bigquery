@@ -28,12 +28,10 @@ class ConnectDB:
 
     def gcs_connect(self):
         storage_client = storage.Client.from_service_account_json(self.gs_credentials_file_path)
-        gs_bucket = storage_client.get_bucket(self.gs_json_bucket_name)
-        gs_blob = gs_bucket.blob(self.gs_json_file_name)
-        return gs_blob
+        gs_blobs = storage_client.list_blobs(self.gs_json_bucket_name, prefix='json/')
+        return gs_blobs
 
     def csv_connect(self):
         storage_client = storage.Client.from_service_account_json(self.gs_credentials_file_path)
-        gs_bucket = storage_client.get_bucket(self.gs_csv_bucket_name)
-        gs_blob = gs_bucket.blob(self.gs_csv_bucket_name)
-        return gs_blob
+        csv_blob = storage_client.list_blobs(self.gs_csv_bucket_name, prefix='csv/')
+        return csv_blob
