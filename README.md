@@ -1,3 +1,4 @@
+[![ETL-Pipeline](https://github.com/olahsymbo/etl-gcs-postgres-bigquery/actions/workflows/etl-pipeline-ci.yml/badge.svg)](https://github.com/olahsymbo/etl-gcs-postgres-bigquery/actions/workflows/etl-pipeline-ci.yml)
 # ETL-GCS-POSTGRES-BIGQUERY
 
 A project to run ETL on multiple data sources (postgres DB, csvs, jsons), transform the data, and push the transformed data to BigQuery
