@@ -9,10 +9,10 @@ class Extract:
     @staticmethod
     def pg_extract():
 
-        pg_connect.execute('SELECT * FROM your_table_name')
+        pg_connect.execute('SELECT * FROM customer')
         pg_data = pg_connect.fetchall()
 
-        pg_df = pd.DataFrame(pg_data, columns=['customer_id', 'pg_column1', 'pg_column2'])
+        pg_df = pd.DataFrame(pg_data)
         return pg_df
 
     @staticmethod

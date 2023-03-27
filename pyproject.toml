@@ -7,9 +7,13 @@ readme = "README.md"
 packages = [{include = "tiny_etl"}]
 
 [tool.poetry.dependencies]
-python = "3.8.16"
+python = "^3.8"
 python-dotenv = "^1.0.0"
 pandas = "^1.5.3"
+flask = "^2.2.3"
+psycopg2-binary = "^2.9.5"
+google-cloud-storage = "^2.7.0"
+google-cloud-scheduler = "^2.10.0"
 
 
 [build-system]
