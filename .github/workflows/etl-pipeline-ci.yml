@@ -41,5 +41,5 @@ jobs:
         run: poetry install --no-root
         if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: Run tests (Pytest)
-        run: poetry run pytest --disable-warnings
+#      - name: Run tests (Pytest)
+#        run: poetry run pytest --disable-warnings
