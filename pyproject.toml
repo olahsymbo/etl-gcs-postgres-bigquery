@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "etl-gcs-postgres-bigquery"
+version = "0.1.0"
+description = ""
+authors = ["olahsymbo <olahsymbo@gmail.com>"]
+readme = "README.md"
+packages = [{include = "etl_gcs_postgres_bigquery"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+google-cloud-storage = "^2.7.0"
+google-cloud-scheduler = "^2.10.0"
+pandas = "^1.5.3"
+flask = "^2.2.3"
+google-cloud-bigquery = "^3.7.0"
+python-dotenv = "^1.0.0"
+psycopg2-binary = "^2.9.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
